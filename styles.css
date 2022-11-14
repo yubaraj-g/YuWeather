@@ -1,0 +1,31 @@
+body {
+    /* background-color: rgb(249, 242, 255); */
+    background-image: url("./img/sky.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main {
+    background-color: #ffffff33;
+    backdrop-filter: blur(20px);
+}
+
+hr{
+    border-top: 1px solid rgba(0, 0, 255, 0.3)
+}
+
+/* .weather-info {
+    display: flex;
+} */
+
+.weather-info.loading{
+    visibility: hidden;
+}
+
+.weather-info.loading::after {
+    visibility: visible;
+    content: "Type a place or city name..";
+    color: gray;
+    font-weight: 700;
+}
