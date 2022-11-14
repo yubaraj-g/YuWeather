@@ -22,7 +22,6 @@ const weather = {
     search: function() {
         this.fetchWeather(document.querySelector('.searchbar').value);
         document.querySelector('.weather-info').classList.remove('loading');
-        // document.querySelector('.weather-info').classList.add('flex');
     }
 };
 
