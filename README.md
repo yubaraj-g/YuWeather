@@ -1,5 +1,5 @@
 # YuWeather
-Weather App (Open weather API + unsplash API)
+<strong>Weather App (Open weather API + unsplash API)</strong>
 
 A very simple <b>Weather App</b> which also changes the Background image according to the City name that's been searched.
 
