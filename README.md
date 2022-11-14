@@ -1,7 +1,7 @@
 # YuWeather
 Weather App (Open weather API + unsplash API)
 
-A very simple API app which also changes the Background image according to the City name that's been searched.
+A very simple <b>Weather App</b> which also changes the Background image according to the City name that's been searched.
 
 API 1 : "openweathermap" api to extract the weather information of the given city/location.
 
