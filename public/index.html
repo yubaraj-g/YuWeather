@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YuWeather - A Simple Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./scripts.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/e3deade77c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main class="none">
+      <div class="left text-white">
+        <div class="upper">
+          <div>
+            <h1 class="city-name"></h1>
+            <span id="country"></span>
+          </div>
+          <div>
+            <div>
+              <h2 class="temp">27 &#176;c</h2>
+            </div>
+            <div id="big-clock">
+              <p></p>
+              <span>Tuesday, 21 March 2023</span>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <h4>
+            <span>Your location:</span>&nbsp;
+            <p id="user-loc-data"></p>
+            <p id="timeonly"></p>
+            <!-- <span class="city-name"></span>&nbsp;<span class="temp"></span> 13:19:33 Tuesday, 21
+            March 2023 -->
+          </h4>
+        </div>
+      </div>
+      <div class="right text-white">
+        <picture class="weather-icon">
+          <img src="" alt="weather-icon" />
+        </picture>
+        <h2 id="behavior"></h2>
+        <hr />
+        <form id="search-form">
+          <input type="text" placeholder="Search a city" id="input-city" />
+          <button type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+        <h3 class="city-name"></h3>
+        <div class="details">
+          <div id="d-temp">
+            <span>Temperature</span>
+            <span class="temp">27 &#176;C</span>
+          </div>
+          <div id="d-humid">
+            <span>Humidity</span>
+            <span id="d-humid-value">44%</span>
+          </div>
+          <div id="d-visib">
+            <span>Visibility</span>
+            <span id="d-visib-value">2500 ml</span>
+          </div>
+          <div id="d-wind">
+            <span>Wind Speed</span>
+            <span id="d-wind-value">2 km / h</span>
+          </div>
+          <div id="d-desc">
+            <span>Description</span>
+            <span id="d-desc-value" class="desc"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile">
+        <div class="search">
+          <form class="searchFormMob">
+            <input type="text" id="input-city-mobile" placeholder="Search a city" />
+            <button class="searchBtnMob" type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+
+          <div class="results">
+            <div class="locationRes">
+              <h2 class="city-name"></h2>
+              <div class="tempr">
+                <div id="w-icon">
+                  <img src="" alt="icon" />
+                </div>
+                <h3 class="temp"></h3>
+                <h4 class="bhv"></h4>
+                <div class="details">
+                  <div class="dtls">
+                    <h5>Humidity</h5>
+                    <span></span>
+                  </div>
+                  <div class="dtls">
+                    <h5>Visibility</h5>
+                    <span></span>
+                  </div>
+                  <div class="dtls">
+                    <h5>Wind Speed</h5>
+                    <span></span>
+                  </div>
+                  <div class="dtls">
+                    <h5>Description</h5>
+                    <span></span>
+                  </div>
+                </div>
+                <!-- <div class="dayDate">Sunday, Apr 10</div> -->
+              </div>
+            </div>
+            <div class="minimized-user-location">
+              <!-- <h3>Your Location</h3>
+              <hr> -->
+              <div>
+                <span>Your Location:&nbsp;</span>
+                <div>
+                  <h4 id="mob-user-location"></h4>
+                  <h5 id="mob-user-temp"></h5>
+                  <h6 class="bhv"></h6>
+                </div>
+              </div>
+              <div id="mob-clock"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="loader" id="loader">
+      <div>
+        <div class="weather-loader-icon">
+          <!-- <img src="/src/img/WeatherIcons.gif" alt="" /> -->
+        </div>
+        <div class="info">
+          <h2>Detecting Your Location</h2>
+          <p>
+            Your current location will be displayed on the App & used for
+            calculating Real Time Weather Information
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <h6>Developed with &#10084; by Yubaraj Gaonkhowa.</h6>
+    </section>
+  </body>
+</html>

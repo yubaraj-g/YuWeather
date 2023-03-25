@@ -1,0 +1,681 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+$grayWhite: #f4f4f4;
+$grayDark: #454545;
+$grayLight: #b9b9b9;
+$grayBlack: #2f2f2f;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  // font-family: "Roboto", sans-serif;
+}
+
+.none {
+  display: none;
+}
+.hidden {
+  display: hidden;
+  visibility: hidden;
+}
+
+// .loader .weather-loader-icon {
+//   background: url("/src/img/WeatherIcons.gif") no-repeat;
+// }
+
+// For bigger screens
+@media screen and (min-width: 901px) {
+  body {
+    background: url("./img/nature-1.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+    .main {
+      display: flex;
+      padding: 0;
+      height: 750px;
+      overflow: hidden;
+      width: 80%;
+      max-width: 1100px;
+      border-radius: 10px;
+      justify-content: center;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      padding: 3rem;
+      position: relative;
+    }
+
+    .loader {
+      display: flex;
+      width: 80%;
+      max-width: 1100px;
+      padding: 3rem;
+      height: 750px;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+
+      div:only-child {
+        width: 100%;
+        height: 100%;
+        background-color: #000000bb;
+        border-radius: 10px;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+        .weather-loader-icon {
+          width: 70%;
+          height: 70%;
+          background: url("/src/img/WeatherIcons.gif") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+        .info {
+          width: 50%;
+          color: #ccc;
+          text-align: center;
+          margin-bottom: 10rem;
+
+          h2 {
+            font-weight: bold;
+            color: #fff;
+            font-size: larger;
+            margin-bottom: 1rem;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .left {
+    background: url("./img/nature-min.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 65%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    padding: 2rem;
+    border-radius: 10px 0 0 10px;
+
+    h1 {
+      font-size: x-large;
+      font-weight: bold;
+    }
+
+    .upper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      justify-content: space-between;
+
+      div:first-child span {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        color: #ccc;
+      }
+
+      div:last-child {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+
+        div:first-child {
+          margin: 0;
+          padding: 0;
+          .temp {
+            font-size: 60px;
+          }
+        }
+
+        div:last-child {
+          display: block;
+          margin: 0;
+          padding: 0;
+
+          p {
+            font-size: 32px;
+          }
+          span {
+            color: #ccc;
+          }
+        }
+      }
+
+      h1 {
+        text-align: end;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: #ccc;
+      font-size: small;
+      padding: 0.75rem;
+      background-color: #0007;
+      backdrop-filter: blur(10px);
+      border-radius: 0 0 0 10px;
+      overflow: hidden;
+
+      h4 {
+        display: inline-flex;
+
+        span {
+          width: fit-content;
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 35%;
+    height: 100%;
+    background-color: #00000099;
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .weather-icon {
+      position: relative;
+      margin: 0 auto;
+
+      img {
+        width: 200px;
+        height: 200px;
+        background-color: transparent;
+        border-radius: 500px;
+        image-rendering: pixelated;
+      }
+    }
+
+    h2 {
+      font-size: 36px;
+      margin: 0.5rem auto 0 auto;
+      font-weight: 400;
+    }
+
+    hr {
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    .details {
+      div {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+        font-size: small;
+        border-top: 1px solid #454545;
+        width: 100%;
+
+        span {
+          color: #ccc;
+        }
+        .desc {
+          width: 50%;
+          text-align: end;
+        }
+      }
+    }
+
+    form {
+      position: relative;
+      margin: 0 auto;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+
+      input {
+        background-color: transparent;
+        border-bottom: 1px solid grey;
+        width: 80%;
+        font-weight: 200;
+      }
+      input:hover,
+      input:focus {
+        outline: none;
+        border-bottom: 1px solid #b9b9b9;
+      }
+      input::placeholder {
+        font-size: smaller;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      button {
+        width: 20%;
+      }
+    }
+
+    h3 {
+      position: relative;
+      margin: 1.5rem auto;
+      font-weight: 600;
+    }
+  }
+  .footer {
+    display: flex;
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0.25rem 0.5rem;
+    background-color: #fff1;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    color: #ddd;
+    z-index: 50;
+
+    h6 {
+      font-weight: 400;
+      font-size: small !important;
+    }
+  }
+
+  // This is only for mobile and it shouldn't show on bigger screens
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .minimized-user-location {
+    div {
+      display: flex;
+      flex-direction: column;
+      font-size: x-small !important;
+      gap: 5px !important;
+
+      div {
+        display: flex !important;
+        flex-direction: row;
+        font-size: small !important;
+      }
+    }
+    #mob-clock {
+      font-size: small !important;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .minimized-user-location {
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: small;
+      padding: 0 0.5rem !important;
+      gap: 5px !important;
+
+      span {
+        min-width: fit-content !important;
+        font-size: x-small !important;
+      }
+
+      div {
+        flex-direction: row;
+        padding: 0px;
+      }
+    }
+  }
+  .loader {
+    div .info {
+      width: 80% !important;
+      p {
+        font-size: smaller !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  // .main {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+}
+
+@media screen and (max-width: 720px) {
+  .left,
+  .right {
+    display: none;
+  }
+
+  .mobile {
+    .search {
+      .results {
+        .locationRes {
+          .tempr {
+            width: fit-content !important;
+
+            .bhv {
+              margin-bottom: 0.5rem;
+            }
+
+            .details {
+              display: grid;
+              grid-template-columns: auto auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// for smaller screens
+@media screen and (max-width: 900px) {
+  body {
+    background: url("./img/nature-1.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .loader {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    padding: 3rem;
+    height: 85%;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    div:only-child {
+      width: 100%;
+      height: 100%;
+      background-color: #000000bb;
+      border-radius: 10px;
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      .weather-loader-icon {
+        width: 70%;
+        height: 70%;
+        background: url("/src/img/WeatherIcons.gif") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      .info {
+        width: 65%;
+        color: #ccc;
+        text-align: center;
+        margin-bottom: 10rem;
+
+        h2 {
+          font-weight: bold;
+          color: #fff;
+          font-size: larger;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .main {
+    display: flex;
+
+    .left {
+      display: none;
+    }
+    .right {
+      display: none;
+    }
+
+    .mobile {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      // margin-top: 2rem;
+    }
+
+    .search {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .searchFormMob {
+      display: inline-flex;
+      gap: 1rem;
+      padding: 1rem;
+      width: 100%;
+      height: fit-content;
+      background-color: #0006;
+      backdrop-filter: blur(50px);
+      border-radius: 0 0 30px 30px;
+
+      input {
+        background-color: #0002;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        padding: 10px 15px;
+        // backdrop-filter: blur(5px);
+      }
+
+      input:focus {
+        outline: none;
+        background-color: #00000099;
+        color: white;
+      }
+
+      .searchBtnMob {
+        display: block;
+        background-color: #ccc4;
+        color: white;
+        border-radius: 30px;
+        padding: 10px 15px;
+      }
+      .searchBtnMob:hover,
+      :focus {
+        background-color: #0009;
+      }
+    }
+
+    .results {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+
+      .asyncRes {
+        display: none;
+      }
+
+      .locationRes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.4rem;
+        width: 100%;
+        height: 80%;
+        align-items: center;
+        padding: 1rem;
+        color: #f4f4f4;
+        position: relative;
+
+        h2 {
+          color: $grayWhite;
+          font-size: 24px;
+          font-weight: 400;
+          margin-bottom: 1rem;
+          width: fit-content;
+          text-align: center;
+          padding: 0 10px;
+          font-weight: 700;
+          background-color: #2f2f2f;
+          border-radius: 5px;
+        }
+
+        .tempr {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          padding: 1rem;
+          margin-top: -1rem;
+          border-radius: 30px;
+          background-color: #0002;
+          box-shadow: 0 2px 1px #ccc9;
+          backdrop-filter: blur(5px);
+
+          #w-icon {
+            width: 200px;
+            height: 200px;
+            background-color: #fff4;
+            // box-shadow: 0px 2px 2px white;
+            border-radius: 30px;
+            margin-bottom: 2rem;
+
+            img {
+              width: inherit;
+              zoom: 10;
+            }
+          }
+
+          .temp {
+            font-size: 72px;
+            font-weight: 600;
+          }
+
+          .bhv {
+            margin-bottom: 2rem;
+            font-weight: 600;
+          }
+
+          .details {
+            display: flex;
+            gap: 1rem;
+
+            div {
+              background-color: #ccc1;
+              // box-shadow: 0 1px 1px #ccc;
+              backdrop-filter: blur(5px);
+              width: 10rem;
+              height: 4rem;
+              border-radius: 15px;
+              padding: 0.5rem;
+              max-width: 12rem;
+              max-height: 12rem;
+              text-align: center;
+              font-size: x-small;
+
+              h5 {
+                border-bottom: 1px solid #ccc3;
+                padding-bottom: 5px;
+                margin-bottom: 5px;
+              }
+
+              span {
+                margin-top: 5px;
+                font-size: 14px;
+                font-weight: 700;
+              }
+            }
+          }
+          // .dayDate {
+          //   background-color: #ffffff20;
+          //   font-size: 30px;
+          //   color: #b9b9b9;
+          //   position: absolute;
+          //   width: 100%;
+          //   text-align: center;
+          //   border-radius: 0 0 10px 10px;
+          //   padding-top: 0.6rem;
+          //   padding-bottom: 0.7rem;
+          //   bottom: 0px;
+          //   backdrop-filter: blur(50px);
+          // }
+        }
+      }
+
+      .minimized-user-location {
+        display: flex;
+        flex-direction: column;
+        background-color: #0006;
+        border-radius: 30px 30px 0 0;
+        margin-top: 1rem;
+        text-align: center;
+        padding: 1rem;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 15%;
+        backdrop-filter: blur(20px);
+
+        div {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          width: 100%;
+          color: #f4f4f4;
+          padding: 0 2rem;
+          font-size: medium;
+          justify-content: space-between;
+
+          span {
+            min-width: 120px;
+            width: fit-content;
+          }
+
+          div {
+            justify-content: space-evenly;
+            padding: 0;
+            font-weight: 600;
+          }
+        }
+        #mob-clock {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: none;
+  }
+}
