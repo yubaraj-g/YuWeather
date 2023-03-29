@@ -146,7 +146,7 @@ const weather = {
             descElem.forEach(item => item.innerHTML = description)
             mobDesc1.innerHTML = humidity
             mobDesc2.innerHTML = visibility
-            mobDesc3.innerHTML = speed
+            mobDesc3.innerHTML = `${speed} km / h`
             mobDesc4.innerHTML = description
             mobBehavior.forEach(item => item.innerHTML = main)
             mobUserLoc.innerHTML = name + "&nbsp;"
@@ -173,6 +173,10 @@ const weather = {
             windElem.innerHTML = `${speed} km / h`
             descElem.forEach(item => item.innerHTML = description)
             mobBehaviorCity.innerHTML = main
+            mobDesc1.innerHTML = humidity
+            mobDesc2.innerHTML = visibility
+            mobDesc3.innerHTML = `${speed} km / h`
+            mobDesc4.innerHTML = description
         }
     }
 };
