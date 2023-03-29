@@ -1,13 +1,21 @@
 # YuWeather
-<strong>Weather App (Open weather API + unsplash API)</strong>
+<strong>Weather App (GeoLocation API + OpenWeatherMap API + unsplash API + Webpack)</strong>
 
-A very simple <b>Weather App</b> which also changes the Background image according to the City name that's been searched.
+All in one Weather App <b>YuWeather</b>.<br><br>
+<i><b>Features:</b></i>
+1. Fetch weather information depending on user's current location. (GeoLocation API)
+2. Search a city name and fetch weather information of the city. (OpenWeatherMap API)
+3. Dynamic background change according to the city searched. (Unsplash API)
+4. Fully responsive.
+5. Beautiful UI.
 
-API 1 : "openweathermap" api to get the weather information of the given city/location.
-
-API 2 : Unsplash API to change the background image according to the given city/location.
-
-
-<i>PS:  The image API (unsplash) will also search for any random keyword you put there, so it'll always show some image.
-     For example - "chicken" won't load any weather information if typed in the search bar, but it'll show some chicken
-                  image in the background.</i>
+<br>
+<i><b>Tech Stack:</b></i><br>
+<i><b>APIs:</b></i> <strong>GeoLocation, OpenWeatherMap, Unsplash.</strong>
+<br>
+<i><b>Tech:</b></i> <strong>JavaScript, Webpack, RESTful APIs, HTML, SCSS, Mobile Responsive</strong>
+<br><br>
+.<br>
+.<br>
+.<br>
+<i>PS:  The image API (unsplash) will also search for any random keyword you put there, so it'll always show some image. For example - "chicken" won't load any weather information if typed in the search bar, but it'll show some chicken image in the background.</i>
