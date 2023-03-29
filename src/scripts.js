@@ -1,4 +1,5 @@
 // importing the scss into JS
+import { weatherSvg, thunderSvg, daySvg, nightSvg, fewClouds, mediumClouds, heavyClouds, allClouds, lightRain, mediumRain, heavyRain, snowSunMid, snowLight, snowMedium, snowHeavy } from "./icons"
 import "./styles.scss"
 
 const inputSearch = document.getElementById('input-city')
@@ -16,8 +17,8 @@ const bottomCurrentLocData = document.querySelector('#user-loc-data')
 const bigClock = document.querySelector('#big-clock p')
 const bigClockDate = document.querySelector('#big-clock span')
 const behaviorElem = document.querySelector('#behavior')
-const iconElem = document.querySelector('.weather-icon img')
-const mobileIcon = document.querySelector('.tempr img')
+const iconElem = document.querySelector('.weather-icon')
+const mobileIcon = document.querySelector('#w-icon')
 const humidityElem = document.querySelector('#d-humid-value')
 const visibilityElem = document.querySelector('#d-visib-value')
 const windElem = document.querySelector('#d-wind-value')
@@ -37,7 +38,7 @@ function timeClock(city) {
     let hrs = d.getHours()
     let mins = d.getMinutes()
     let secs = d.getSeconds()
-    let ampm = hrs >= 12 ? 'PM' : 'AM' 
+    let ampm = hrs >= 12 ? 'PM' : 'AM'
 
     hrs = hrs % 12
     hrs = hrs === 0 ? 12 : hrs
@@ -54,6 +55,54 @@ function timeClock(city) {
         bigClock.innerHTML = `${hrs}:${mins}:${secs} ${ampm}`
         bigClockDate.innerHTML = d.toDateString()
         mobClock.innerHTML = `${hrs}:${mins}:${secs} ${ampm}, ${d.toDateString()}`
+    }
+}
+
+function iconChange(main) {
+    switch (main) {
+        case "Haze":
+            iconElem.innerHTML = daySvg
+            mobileIcon.innerHTML = daySvg
+            break
+        case "Clouds":
+            iconElem.innerHTML = heavyClouds
+            mobileIcon.innerHTML = heavyClouds
+            break
+        case "Rain":
+            iconElem.innerHTML = heavyRain
+            mobileIcon.innerHTML = heavyRain
+            break;
+        case "Snow":
+            iconElem.innerHTML = snowHeavy
+            mobileIcon.innerHTML = snowHeavy
+            break;
+        case "Dust":
+            iconElem.innerHTML = fewClouds
+            mobileIcon.innerHTML = fewClouds
+            break;
+        case "Drizzle":
+            iconElem.innerHTML = mediumRain
+            mobileIcon.innerHTML = mediumRain
+            break;
+        case "Fog":
+            iconElem.innerHTML = allClouds
+            mobileIcon.innerHTML = allClouds
+            break;
+        case "Smoke":
+            iconElem.innerHTML = allClouds
+            mobileIcon.innerHTML = allClouds
+            break;
+        case "Mist":
+            iconElem.innerHTML = allClouds
+            mobileIcon.innerHTML = allClouds
+            break;
+        case "Tornado":
+            iconElem.innerHTML = allClouds
+            mobileIcon.innerHTML = allClouds
+            break;
+        default:
+            iconElem.innerHTML = daySvg
+            mobileIcon.innerHTML = daySvg
     }
 }
 
@@ -88,10 +137,10 @@ const weather = {
             cityNames.forEach(item => item.innerHTML = name)
             country.innerHTML = sys.country
             temps.forEach(item => item.innerHTML = `${Math.round(temp)} &#176;c`)
-            bottomCurrentLocData.innerHTML = name + '&nbsp;'
+            bottomCurrentLocData.innerHTML = `${name} ${sys.country} ${Math.round(temp)} &#176;c,&nbsp;`
             behaviorElem.innerHTML = main
-            iconElem.src = `https://openweathermap.org/img/wn/${icon}.png`
-            mobileIcon.src = `https://openweathermap.org/img/wn/${icon}.png`
+            // iconElem.src = `https://openweathermap.org/img/wn/${icon}.png`
+            iconChange(main)
             humidityElem.innerHTML = humidity
             visibilityElem.innerHTML = visibility
             windElem.innerHTML = `${speed} km / h`
@@ -102,7 +151,7 @@ const weather = {
             mobDesc4.innerHTML = description
             mobBehavior.forEach(item => item.innerHTML = main)
             mobUserLoc.innerHTML = name + "&nbsp;"
-            mobUserTemp.innerHTML = Math.round(temp)
+            mobUserTemp.innerHTML = `${Math.round(temp)} &#176;c`
         }
     },
     displayWeatherCity: function (data) {
@@ -119,8 +168,7 @@ const weather = {
             country.innerHTML = sys.country
             temps.forEach(item => item.innerHTML = `${Math.round(temp)} &#176;c`)
             behaviorElem.innerHTML = main
-            iconElem.src = `https://openweathermap.org/img/wn/${icon}.png`
-            mobileIcon.src = `https://openweathermap.org/img/wn/${icon}.png`
+            iconChange(main)
             humidityElem.innerHTML = humidity
             visibilityElem.innerHTML = visibility
             windElem.innerHTML = `${speed} km / h`
@@ -143,7 +191,7 @@ const bgImage = {
 
         // document.querySelector('.left').style.background = `url(${regular}) no-repeat center`
         // document.querySelector('.left').style.backgroundSize = `cover`
-        document.body.style.background = "url("+ regular +") no-repeat center";
+        document.body.style.background = "url(" + regular + ") no-repeat center";
         document.body.style.backgroundSize = "cover";
     }
 }
