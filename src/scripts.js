@@ -139,7 +139,6 @@ const weather = {
             temps.forEach(item => item.innerHTML = `${Math.round(temp)} &#176;c`)
             bottomCurrentLocData.innerHTML = `${name} ${sys.country} ${Math.round(temp)} &#176;c,&nbsp;`
             behaviorElem.innerHTML = main
-            // iconElem.src = `https://openweathermap.org/img/wn/${icon}.png`
             iconChange(main)
             humidityElem.innerHTML = humidity
             visibilityElem.innerHTML = visibility
@@ -187,10 +186,6 @@ const bgImage = {
     },
     displayImage: function (imgObj) {
         const { regular } = imgObj.results[1].urls;
-        // console.log(imgObj);
-
-        // document.querySelector('.left').style.background = `url(${regular}) no-repeat center`
-        // document.querySelector('.left').style.backgroundSize = `cover`
         document.body.style.background = "url(" + regular + ") no-repeat center";
         document.body.style.backgroundSize = "cover";
     }
